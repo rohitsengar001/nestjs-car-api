@@ -6,7 +6,7 @@ import { CarModule } from './car/car.module';
 @Module({
   imports: [
     CarModule,
-    MongooseModule.forRoot('mongodb://localhost:car_manager')
+    MongooseModule.forRoot('mongodb://localhost:27017/car_manager')
   ],
   controllers: [],
   providers: [AppService],
