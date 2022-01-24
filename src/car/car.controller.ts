@@ -1,5 +1,5 @@
 import { Body, Controller, Delete, Get, Param, Post, Put, Query } from '@nestjs/common';
-import { CarDto } from './car.dto';
+import { CarDto } from './dto/car.dto';
 import { CarService } from './car.service';
 
 
@@ -24,7 +24,7 @@ export class CarController {
 
   @Delete(':id')
   public async deleteCarById(@Param('id') id:number){
-    return this.carService.deleteCarByID(id);
+    return this.carService.deleteCarById(id);
   }
 
   @Put(':id')
