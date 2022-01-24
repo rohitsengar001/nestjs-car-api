@@ -18,17 +18,17 @@ export class CarController {
   }
 
   @Get(':id')
-  public getCarById(@Param('id') id:number){
+  public async getCarById(@Param('id') id:number){
     return this.carService.getCarById(id);
   }
 
   @Delete(':id')
-  public deleteCarById(@Param('id') id:number){
+  public async deleteCarById(@Param('id') id:number){
     return this.carService.deleteCarByID(id);
   }
 
   @Put(':id')
-  public put(@Param('id') id,@Query() query) {
+  public async put(@Param('id') id,@Query() query) {
     const propertyName=query.property_name;
     const propertyValue=query.property_value;
     return this.carService.putCarById(id,propertyName,propertyValue);
